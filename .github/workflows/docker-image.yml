@@ -16,4 +16,6 @@ jobs:
         run: |
           echo Downloading cdefense CLI
           echo Downloading cdefense CLI
-          curl --location 'https://dev.clouddefenseai.com/api/scan/delta' --header 'clouddefense_api_key: 32762768-54f7-4a53-af05-5bc7835bf9a2' --data '[{"url":"https://github.com/OAndriiovych/delta-scan-demo","type":"GITHUB", "prId":"3"}]'
+          curl https://raw.githubusercontent.com/kaushik94/cdefense-delta/main/src > /usr/local/bin/cdefense && chmod +x /usr/local/bin/cdefense
+          export SCAN_URL=https://dev.clouddefenseai.com
+          cdefense online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repo-url=https://github.com/OAndriiovych/delta-scan-demo --repo-type=GITHUB --branch=master --pr-id=1
