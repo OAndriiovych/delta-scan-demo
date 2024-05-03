@@ -17,7 +17,6 @@ jobs:
           echo Downloading cdefense CLI
           echo Downloading cdefense CLI
           git clone https://github.com/kaushik94/cdefense-delta.git && cd $(pwd)/cdefense-delta && mv  src cdefense && cp cdefense /usr/local/bin/cdefense && chmod +x /usr/local/bin/cdefense
-#          curl https://raw.githubusercontent.com/kaushik94/cdefense-delta/main/src > cdefense-delta-scan && tar -C /usr/local/bin -xzf /tmp/cdefense-delta-scan && chmod +x /usr/local/bin/cdefense
           echo running scan on $(pwd)
           export SCAN_URL=https://dev.clouddefenseai.com
           cdefense online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repo-url=https://github.com/OAndriiovych/delta-scan-demo --repo-type=GITHUB --branch=master --pr-id=1
