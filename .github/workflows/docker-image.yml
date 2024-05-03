@@ -18,4 +18,4 @@ jobs:
           curl https://raw.githubusercontent.com/kaushik94/cdefense-delta/blob/main/cdefense-delta-scan > /tmp/cdefense-delta-scan && tar -C /usr/local/bin -xzf /tmp/cdefense-delta-scan && chmod +x /usr/local/bin/cdefense
           echo running scan on $(pwd)
           export SCAN_URL=https://dev.clouddefenseai.com
-          cdefense-delta-scan online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repo-url=https://github.com/OAndriiovych/delta-scan-demo --repo-type=GITHUB --branch=master --pr-id=1
+          ./cdefense-delta-scan online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repo-url=https://github.com/OAndriiovych/delta-scan-demo --repo-type=GITHUB --branch=master --pr-id=1
