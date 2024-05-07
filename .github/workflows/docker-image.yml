@@ -6,6 +6,7 @@ on:
 
 env:
   GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
+  REPO_URL: ${{ github.server_url }}/${{ github.repository }}
 
 jobs:
 
@@ -17,9 +18,6 @@ jobs:
       - name: scan code for vulnerabilities
         run: |
           echo Downloading cdefense CLI
-          echo "$GITHUB_PR_NUMBER"
-          echo $GITHUB_PR_NUMBER
-          echo GITHUB_PR_NUMBER
           curl https://raw.githubusercontent.com/kaushik94/cdefense-delta/main/linux-amd64-go-build > /usr/local/bin/cdefense && chmod +x /usr/local/bin/cdefense
           export SCAN_URL=https://dev.clouddefenseai.com
-          cdefense online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repository-url=https://github.com/OAndriiovych/delta-scan-demo --pr-id=1
+          cdefense online --api-key=32762768-54f7-4a53-af05-5bc7835bf9a2 --repository-url="$REPO_URL" --pr-id="$GITHUB_PR_NUMBER"
