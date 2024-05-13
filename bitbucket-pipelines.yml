@@ -1,0 +1,10 @@
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          script:
+            - echo $BITBUCKET_PR_ID
+            - echo $BITBUCKET_REPO_FULL_NAME
+            - echo $BITBUCKET_REPO_SLUG
+            - echo $BITBUCKET_GIT_HTTP_ORIGIN
+            - echo $BITBUCKET_CLONE_DIR
